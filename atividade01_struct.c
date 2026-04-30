@@ -3,9 +3,9 @@
 #define NUM_ALUNOS 30
 
 struct Aluno {
-    float nota1;
-    float nota2;
-    float media;
+   double nota1;
+    double nota2;
+    double media;
 };
 
 void lerNotas(struct Aluno alunos[], int n) {
@@ -24,15 +24,15 @@ void calcularMedias(struct Aluno alunos[], int n) {
     }
 }
 
-float calcularMediaTurma(struct Aluno alunos[], int n) {
-    float soma = 0;
+double calcularMediaTurma(struct Aluno alunos[], int n) {
+    double soma = 0;
     for (int i = 0; i < n; i++) {
         soma += alunos[i].media;
     }
     return soma / n;
 }
 
-void imprimirAcimaMedia(struct Aluno alunos[], int n, float mediaTurma) {
+void imprimirAcimaMedia(struct Aluno alunos[], int n, double mediaTurma) {
     printf("\nMedia da turma: %.2f\n", mediaTurma);
     printf("\nAlunos acima da media da turma:\n");
     printf("%-10s %-10s %-10s %-10s\n", "Aluno", "Nota 1", "Nota 2", "Media");
@@ -52,7 +52,7 @@ int main() {
     lerNotas(alunos, NUM_ALUNOS);
     calcularMedias(alunos, NUM_ALUNOS);
 
-    float mediaTurma = calcularMediaTurma(alunos, NUM_ALUNOS);
+    double mediaTurma = calcularMediaTurma(alunos, NUM_ALUNOS);
 
     imprimirAcimaMedia(alunos, NUM_ALUNOS, mediaTurma);
 
